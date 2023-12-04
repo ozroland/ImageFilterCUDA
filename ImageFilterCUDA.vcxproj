@@ -82,6 +82,7 @@
     <CudaCompile Include="medianFilter.cu" />
     <CudaCompile Include="sharpeningFilter.cu" />
     <CudaCompile Include="sobelEdgeDetectionFilter.cu" />
+    <CudaCompile Include="thresholdFilter.cu" />
     <CudaCompile Include="tvFilter.cu" />
   </ItemGroup>
   <ItemGroup>

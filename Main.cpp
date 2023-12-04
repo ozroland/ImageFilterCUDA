@@ -12,6 +12,7 @@ extern "C" bool medianFilter_GPU_wrapper(const cv::Mat & input, cv::Mat & output
 extern "C" bool sharpeningFilter_GPU_wrapper(const cv::Mat & input, cv::Mat & output);
 extern "C" bool sobelFilter_GPU_wrapper(const cv::Mat & input, cv::Mat & output);
 extern "C" bool tvFilter_GPU_wrapper(const cv::Mat & input, cv::Mat & output);
+extern "C" bool thresholdFilter_GPU_wrapper(const cv::Mat & input, cv::Mat & output);
 
 int main(int argc, char** argv) {
     string image_location;
@@ -40,7 +41,8 @@ int main(int argc, char** argv) {
     cout << "4. Sharpening filter\n";
     cout << "5. Sobel edge detection filter\n";
     cout << "6. TV filter\n";
-    cout << "Enter the filter number (1-6): ";
+    cout << "7. Threshold filter\n";
+    cout << "Enter the filter number (1-7): ";
     cin >> filter_choice;
 
     cv::Mat dstImage(srcImage.size(), srcImage.type());
@@ -68,6 +70,10 @@ int main(int argc, char** argv) {
 
     case 6:
         tvFilter_GPU_wrapper(srcImage, dstImage);
+        break;
+
+    case 7:
+        thresholdFilter_GPU_wrapper(srcImage, dstImage);
         break;
 
     default:
